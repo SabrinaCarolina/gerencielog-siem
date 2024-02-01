@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -38,8 +40,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Remetente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Destinatario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Motorista = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -52,8 +58,32 @@
             this.panel1.Controls.Add(this.button1);
             this.panel1.Location = new System.Drawing.Point(703, -42);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(173, 445);
+            this.panel1.Size = new System.Drawing.Size(173, 464);
             this.panel1.TabIndex = 0;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.button3.Location = new System.Drawing.Point(12, 128);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(126, 33);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "Nova Ocorrência";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button4.Location = new System.Drawing.Point(12, 89);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(126, 33);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "Rastreio";
+            this.button4.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
@@ -87,7 +117,7 @@
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(251, 11);
+            this.comboBox1.Location = new System.Drawing.Point(251, 12);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(80, 21);
             this.comboBox1.TabIndex = 3;
@@ -128,42 +158,76 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(11, 44);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Codigo,
+            this.Data,
+            this.Remetente,
+            this.Destinatario,
+            this.Motorista});
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.Location = new System.Drawing.Point(11, 39);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(686, 330);
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(686, 312);
             this.dataGridView1.TabIndex = 8;
+            this.dataGridView1.TabStop = false;
             // 
-            // button4
+            // Codigo
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button4.Location = new System.Drawing.Point(12, 89);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(126, 33);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Rastreio";
-            this.button4.UseVisualStyleBackColor = false;
+            this.Codigo.HeaderText = "Cód.";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            this.Codigo.Width = 70;
             // 
-            // button3
+            // Data
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.button3.Location = new System.Drawing.Point(12, 128);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(126, 33);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Nova Ocorrência";
-            this.button3.UseVisualStyleBackColor = false;
+            this.Data.HeaderText = "Data";
+            this.Data.Name = "Data";
+            this.Data.ReadOnly = true;
+            // 
+            // Remetente
+            // 
+            this.Remetente.HeaderText = "Remetente";
+            this.Remetente.Name = "Remetente";
+            this.Remetente.ReadOnly = true;
+            this.Remetente.Width = 200;
+            // 
+            // Destinatario
+            // 
+            this.Destinatario.HeaderText = "Destinatário";
+            this.Destinatario.Name = "Destinatario";
+            this.Destinatario.ReadOnly = true;
+            this.Destinatario.Width = 200;
+            // 
+            // Motorista
+            // 
+            this.Motorista.HeaderText = "Motorista";
+            this.Motorista.Name = "Motorista";
+            this.Motorista.ReadOnly = true;
+            this.Motorista.Width = 113;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Location = new System.Drawing.Point(11, 351);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(686, 35);
+            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Status";
             // 
             // Gerenciador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(855, 386);
+            this.ClientSize = new System.Drawing.Size(855, 391);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -200,6 +264,12 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Data;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Remetente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Destinatario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Motorista;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 
